@@ -4,8 +4,10 @@ COPY . /usr/share/nginx/html
 in the docker file
 
 For maven web project:- 
-FROM tomcat:9-jdk11(tomcat version-jdk[jdk version])
-COPY target/* .war /usr/local/tomcat/webapps/
+FROM tomcat:9-jdk17(tomcat version-jdk[jdk version])
+COPY src/main/webapp /usr/local/tomcat/webapps/mavenWebProject
+or
+// COPY target/* .war /usr/local/tomcat/webapps/ -> dont use if target file is not there
 
 
 COMMON STEPS:

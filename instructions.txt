@@ -1,0 +1,14 @@
+Simple process for any file, for maven web project, check below
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+in the docker file
+
+For maven web project:- 
+FROM tomcat:9-jdk11(tomcat version-jdk[jdk version])
+COPY target/* .war /usr/local/tomcat/webapps/
+
+
+COMMON STEPS:
+sudo docker build -t <give image name> .
+sudo docker run -d -p 9090:8080 <image name> or sudo docker run -d -p 80:80 <image name>
+go to browser, copy aws instance public ip, paste in browser, then do :80 for any file. Do :9090/<Project name that you have cloned from git> for web project

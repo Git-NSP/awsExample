@@ -30,3 +30,8 @@ CMD ["java", "-jar", "app.jar"]
 FROM nginx:alpine
 # Copies current folder to Nginx default folder
 COPY . /usr/share/nginx/html
+
+
+For maven web project:- 
+FROM tomcat:9-jdk17(tomcat version-jdk[jdk version])
+COPY src/main/webapp /usr/local/tomcat/webapps/mavenWebProject

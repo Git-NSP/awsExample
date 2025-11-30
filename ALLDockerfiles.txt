@@ -1,0 +1,32 @@
+FROM node:alpine
+WORKDIR /app
+COPY . .
+CMD ["node", "app.js"]
+
+
+FROM python:alpine
+WORKDIR /app
+COPY . .
+# Run pip if you have a requirements.txt, otherwise remove this line
+RUN pip install -r requirements.txt 
+CMD ["python", "main.py"]
+
+FROM python:alpine
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+# Flask default port
+EXPOSE 5000 
+CMD ["python", "app.py"]
+
+
+FROM openjdk:17-alpine
+WORKDIR /app
+COPY . .
+# Replace 'app.jar' with your actual jar name
+CMD ["java", "-jar", "app.jar"]
+
+
+FROM nginx:alpine
+# Copies current folder to Nginx default folder
+COPY . /usr/share/nginx/html

@@ -1,6 +1,3 @@
-My ngrok auth token: 35VdYmSQgzlnvEfNCKhDivKD9Xf_4sawmRB8RgDPstx5CXKPd
-
-
 K8
 
 
@@ -14,7 +11,7 @@ kubectl scale deployment mynginx --replicas=4
 
 kubectl port-forward svc/mynginx 8090:80
 
-kubectl get pods (or) kubectl describe pods
+kubectl get pods
 kubectl get svc
 
 minikube ip
@@ -97,7 +94,7 @@ Web-Hooks
 1. get ngrok auth key
 2. ngrok config add-authtoken <key>
 3. ngrok.exe http 8888 -> run in cmd administrator
-4. copy forwarding url shown in GitHub "Settings/Webhooks/PayloadURL"
+4. You will get a url when u run the above command in cmd. Paste that forwarding url in GitHub "Settings/Webhooks/PayloadURL"
   (example https://corkier-darla-handsome.ngrok-free.dev/github-webhook/)
   (add "github-webhook" at end if not there)
 5. in Jenkins, create new item and add git url

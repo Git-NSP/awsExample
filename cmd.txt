@@ -1,3 +1,6 @@
+My ngrok auth token: 35VdYmSQgzlnvEfNCKhDivKD9Xf_4sawmRB8RgDPstx5CXKPd
+
+
 K8
 
 
@@ -93,7 +96,7 @@ Web-Hooks
 
 1. get ngrok auth key
 2. ngrok config add-authtoken <key>
-3. ngrok.exe http 8888
+3. ngrok.exe http 8888 -> run in cmd administrator
 4. copy forwarding url shown in GitHub "Settings/Webhooks/PayloadURL"
   (example https://corkier-darla-handsome.ngrok-free.dev/github-webhook/)
   (add "github-webhook" at end if not there)
